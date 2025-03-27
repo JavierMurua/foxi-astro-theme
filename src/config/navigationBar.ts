@@ -33,25 +33,25 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/logo.svg',
+		src: '/foxi-astro-theme/logo.svg',
 		alt: 'The tailwind astro theme',
 		text: 'Priscila Giménez.'
 	},
 	navItems: [
-		{ name: 'Inicio', link: '/#intro' },
-		{ name: 'Servicios', link: '/#features' },
-		{ name: 'Sobre mí', link: '/#highlight-0' },
-		{
-			name: 'Resources',
-			link: '#',
-			submenu: [
-				{ name: 'Blog', link: '/blog' },
-				{ name: 'Changelog', link: '/changelog' },
-				{ name: 'FAQ', link: '/faq' },
-				{ name: 'Terms', link: '/terms' }
-			]
-		},
-		{ name: 'Contacto', link: '/#contacto' }
+		{ name: 'Inicio', link: '/foxi-astro-theme/#intro' },
+		{ name: 'Servicios', link: '/foxi-astro-theme/#features' },
+		{ name: 'Sobre mí', link: '/foxi-astro-theme/#highlight-0' },
+		// {
+		// 	name: 'Resources',
+		// 	link: '#',
+		// 	submenu: [
+		// 		{ name: 'Blog', link: '/blog' },
+		// 		{ name: 'Changelog', link: '/changelog' },
+		// 		{ name: 'FAQ', link: '/faq' },
+		// 		{ name: 'Terms', link: '/terms' }
+		// 	]
+		// },
+		{ name: 'Contacto', link: '/foxi-astro-theme/#contacto' }
 	],
 	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
 }
