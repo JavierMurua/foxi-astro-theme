@@ -10,18 +10,18 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
 	{
-		name: 'facebook',
-		link: '/',
-		icon: 'fb-icon'
+		name: 'Instagram',
+		link: 'https://www.instagram.com/psi.priscilagimenez',
+		icon: 'instagram'
 	},
 	{
-		name: 'twitter',
-		link: '/',
-		icon: 'twitter-icon'
+		name: 'LinkedIn-Icons8',
+		link: 'https://www.linkedin.com/in/priscila-gimenez-3aa024215/',
+		icon: 'icons8-linkedin'
 	},
-	{
-		name: 'discord',
-		link: '/',
-		icon: 'discord-icon'
-	}
+	// {
+	// 	name: 'discord',
+	// 	link: '/',
+	// 	icon: 'discord-icon'
+	// }
 ]

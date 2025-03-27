@@ -15,42 +15,61 @@ import { footerNavigationData } from '../../config/footerNavigation'
 const { footerAbout, footerColumns, subFooter } = footerNavigationData
 ---
 
-<footer class="footer">
-	<!-- Main footer -->
-	<div class="footer__main">
-		<div class="footer__container">
-			<div class="footer__cols">
-				<div class="footer__col">
-					<a aria-label="webiste logo" aria-current="page" class="footer__main-brand" href="/">
-						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
-						{footerAbout.logo.text}
-					</a>
-					<p>
-						{footerAbout.aboutText}
-					</p>
-				</div>
-				{
-					footerColumns.map((column) => (
-						<div class="footer__col">
-							<h3>{column.category}</h3>
-							<ul>
-								{column.subCategories.map((subCategory) => (
-									<li>
-										<a href={subCategory.subCategoryLink}> {subCategory.subCategory} </a>
-									</li>
-								))}
-							</ul>
-						</div>
-					))
-				}
-			</div>
-		</div>
-	</div>
+<footer id= "contacto" class="footer">
+    <!-- Main footer -->
+    <div class="footer__main  text-center">
+        <div class="footer__container space-y-10">
+
+            <!-- Logo y About -->
+            <div>
+                <a aria-label="website logo" aria-current="page" class="footer__main-brand" href="/">
+                    <img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
+                    {footerAbout.logo.text}
+                </a>
+                <!-- <p>{footerAbout.aboutText}</p> -->
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="text-lg font-medium">
+                <h3 class="text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50 mb-4 hidden">Contacto</h3>
+                <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/eMVyhAZW8YwGuUdX8" target="_blank">Julio Argentino Roca 221, Jesus María, Córdoba</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:+543525419343" target="_blank">3525 41-9343</a></p>
+                <p class="hidden"><strong>Email:</strong> <a href="mailto:contacto@vesuviobakery.com.ar" target="_blank">contacto@vesuviobakery.com.ar</a></p>
+                <p><strong>Horarios de Atención:</strong> Lunes a viernes: 8:00 - 12:00 y 14:00 -20:00</p>
+            </div>
+            <!-- Mapa de Google -->
+            <div class="w-full max-w-3xl mx-auto rounded overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3420.647763848396!2d-64.0987923!3d-30.980310399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a33d35acfb59%3A0xef70be8a798158b6!2sPriscila%20Gim%C3%A9nez%20-%20Licenciada%20en%20Psicolog%C3%ADa!5e0!3m2!1ses-419!2sar!4v1743084790464!5m2!1ses-419!2sar" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <!-- Enlaces -->
+            <div>
+                <h3 class="text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50 mb-4 hidden">Enlaces</h3>
+                <ul class="flex flex-col gap-2 md:flex-row md:flex-wrap md:gap-6 justify-center">
+                    {
+                        footerColumns.flatMap((column) => column.subCategories).map((subCategory) => (
+                            <li>
+                                <a href={subCategory.subCategoryLink}>{subCategory.subCategory}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
 	<!-- Sub Footer -->
 	<div class="footer__sub">
 		<div class="footer__container">
 			<div class="footer__sub-cols">
-				<div class="footer__sub-col">{subFooter.copywriteText}</div>
+				<div class="footer__sub-col"><a href="https://muruadev.com/" target="_blank">{subFooter.copywriteText}</a></div>
 				<nav aria-labelledby="footer-social-links-dark" class="footer__sub-col text-right">
 					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
 					<ul>
@@ -84,18 +103,18 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 		@apply mb-6 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
 	}
 	.footer__main-brand {
-		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
+		@apply mb-6 flex items-center justify-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
 	}
 	.footer__container {
 		@apply container mx-auto px-6;
 	}
 
 	.footer__cols {
-		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
+		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12  outline outline-cyan-500;
 	}
 
 	.footer__col {
-		@apply col-span-2 first:col-span-4 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-6 lg:first:max-w-96;
+		@apply col-span-2 first:col-span-4 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-6 lg:first:max-w-96  outline outline-red-500;
 	}
 	.footer__sub {
 		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm text-neutral-600 dark:border-neutral-900 dark:bg-neutral-800/50 dark:text-neutral-400;

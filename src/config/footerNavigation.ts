@@ -46,66 +46,66 @@ export const footerNavigationData: FooterData = {
 	},
 	footerColumns: [
 		{
-			category: 'Product',
+			category: 'Enlaces',
 			subCategories: [
 				{
-					subCategory: 'Features',
-					subCategoryLink: '/features'
+					subCategory: 'Inicio',
+					subCategoryLink: '/#intro'
 				},
 				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
+					subCategory: 'Servicios',
+					subCategoryLink: '/#features'
 				},
 				{
-					subCategory: 'Pricing',
-					subCategoryLink: '/pricing'
+					subCategory: 'Sobre mí',
+					subCategoryLink: '/#highlight-0'
 				},
 				{
 					subCategory: 'Changelog',
 					subCategoryLink: '/changelog'
 				},
 				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
+					subCategory: 'Contacto',
+					subCategoryLink: '/#contacto'
 				}
 			]
 		},
-		{
-			category: 'About us',
-			subCategories: [
-				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
-				},
-				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
-				}
-			]
-		},
-		{
-			category: 'Get in touch',
-			subCategories: [
-				{
-					subCategory: 'Contact',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
-				}
-			]
-		}
+		// {
+		// 	category: 'About us',
+		// 	subCategories: [
+		// 		{
+		// 			subCategory: 'About us',
+		// 			subCategoryLink: '/'
+		// 		},
+		// 		{
+		// 			subCategory: 'News',
+		// 			subCategoryLink: '/blog'
+		// 		},
+		// 		{
+		// 			subCategory: 'Careers',
+		// 			subCategoryLink: '/blog'
+		// 		}
+		// 	]
+		// },
+		// {
+		// 	category: 'Get in touch',
+		// 	subCategories: [
+		// 		{
+		// 			subCategory: 'Contact',
+		// 			subCategoryLink: '/contact'
+		// 		},
+		// 		{
+		// 			subCategory: 'Support',
+		// 			subCategoryLink: '/contact'
+		// 		},
+		// 		{
+		// 			subCategory: 'Join us',
+		// 			subCategoryLink: '/contact'
+		// 		}
+		// 	]
+		// }
 	],
 	subFooter: {
-		copywriteText: '© Foxi 2024.'
+		copywriteText: 'Potenciado por Murúa Dev'
 	}
 }
