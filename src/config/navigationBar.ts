@@ -38,9 +38,9 @@ export const navigationBarData: NavData = {
 		text: 'Foxi.'
 	},
 	navItems: [
-		{ name: 'Home', link: '/' },
-		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'Features', link: '/features' },
+		{ name: 'Inicio', link: '/#intro' },
+		{ name: 'Servicios', link: '/#features' },
+		{ name: 'Sobre mí', link: '/#highlight-0' },
 		{
 			name: 'Resources',
 			link: '#',
@@ -51,7 +51,7 @@ export const navigationBarData: NavData = {
 				{ name: 'Terms', link: '/terms' }
 			]
 		},
-		{ name: 'Contact', link: '/contact' }
+		{ name: 'Contacto', link: '/#contacto' }
 	],
 	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
 }
