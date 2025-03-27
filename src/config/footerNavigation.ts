@@ -50,15 +50,15 @@ export const footerNavigationData: FooterData = {
 			subCategories: [
 				{
 					subCategory: 'Inicio',
-					subCategoryLink: '/#intro'
+					subCategoryLink: '/foxi-astro-theme/#intro'
 				},
 				{
 					subCategory: 'Servicios',
-					subCategoryLink: '/#features'
+					subCategoryLink: '/foxi-astro-theme/#features'
 				},
 				{
 					subCategory: 'Sobre mí',
-					subCategoryLink: '/#highlight-0'
+					subCategoryLink: '/foxi-astro-theme/#highlight-0'
 				},
 				{
 					subCategory: 'Changelog',
@@ -66,7 +66,7 @@ export const footerNavigationData: FooterData = {
 				},
 				{
 					subCategory: 'Contacto',
-					subCategoryLink: '/#contacto'
+					subCategoryLink: '/foxi-astro-theme/#contacto'
 				}
 			]
 		},
