@@ -53,5 +53,5 @@ export const navigationBarData: NavData = {
 		// },
 		{ name: 'Contacto', link: '/foxi-astro-theme/#contacto' }
 	],
-	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Try it now', link: '/foxi-astro-theme/#', style: 'primary', size: 'lg' }]
 }
