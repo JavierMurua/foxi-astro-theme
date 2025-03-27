@@ -7,7 +7,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://foxi.netlify.app/",
+  site: "https://javiermurua.github.io",
+  base: "foxi-astro-theme",
   integrations: [
     tailwind(),
     icon(),
