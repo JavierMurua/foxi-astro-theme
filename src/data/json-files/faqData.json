@@ -1,20 +1,20 @@
 [
 	{
-		"question": "What is the cost of the basic plan?",
-		"reply": "The basic plan is $9.99 per month, which includes access to core features and limited integrations. This plan is perfect for individuals or small teams looking to improve their productivity without a large investment.",
-		"category": "pricing",
+		"question": "¿Las sesiones son online o presenciales?",
+		"reply": "La atención puede ser presencial en mi consultorio en Julio Argentino Roca 221, Jesús María, Córdoba, o de manera online para mayor comodidad. Puedes elegir la modalidad que mejor se adapte a tus necesidades.",
+		"category": "home",
 		"open": true
 	},
 	{
-		"question": "Are there any discounts for annual subscriptions?",
-		"reply": "Yes, we offer a 20% discount on annual subscriptions for all our plans. By choosing an annual subscription, you can save money and ensure uninterrupted access to all Foxi features for the entire year.",
-		"category": "pricing",
+		"question": "¿Recibes IOSFA?",
+		"reply": "Sí, atiendo por IOSFA. Si deseas solicitar cobertura, consulta con la obra social los requisitos específicos. También puedes optar por consultas particulares.",
+		"category": "home",
 		"open": false
 	},
 	{
-		"question": "Can I change my subscription plan at any time?",
-		"reply": "Yes, you can upgrade or downgrade your subscription plan at any time from your account settings. This flexibility allows you to adjust your plan based on your changing needs and usage.",
-		"category": "pricing",
+		"question": "¿Qué aspectos se evalúan en un apto psicológico?",
+		"reply": "En un apto psicológico, se evalúan diferentes funciones cognitivas y emocionales, como la coordinación visomotora, la atención y concentración, el tiempo de reacción, la capacidad intelectual, el control de impulsos y las características de personalidad. Dependiendo del tipo de apto que se necesite, como la licencia de conducir o el ingreso laboral, los criterios pueden variar.",
+		"category": "home",
 		"open": false
 	},
 	{
@@ -24,22 +24,22 @@
 		"open": false
 	},
 	{
-		"question": "Do you offer refunds?",
-		"reply": "We offer a 30-day money-back guarantee if you are not satisfied with our service. Simply contact our support team within 30 days of your purchase, and we'll process your refund.",
-		"category": "pricing",
+		"question": "¿Pagar por la evaluación garantiza que el resultado será “Apto”?",
+		"reply": "No. La realización de la evaluación psicológica y el pago de los honorarios no aseguran un resultado de 'Apto'. La evaluación es un proceso objetivo basado en criterios específicos, y el resultado dependerá de los indicadores evaluados en cada caso.",
+		"category": "home",
 		"open": false
 	},
 	{
-		"question": "How do I cancel my subscription?",
-		"reply": "You can cancel your subscription from your account settings at any time. After cancellation, you will still have access to your account until the end of the billing cycle.",
-		"category": "pricing",
+		"question": "¿Cómo es la primera sesión de terapia?",
+		"reply": "En la primera sesión, conversaremos sobre tu motivo de consulta, tus expectativas y cómo te gustaría que trabajemos en el proceso terapéutico. Es un espacio donde puedes expresarte con total confianza y sin juicios.",
+		"category": "home",
 		"open": false
 	},
 	{
-		"question": "Can I use Foxi with Google Calendar?",
-		"reply": "Yes, Foxi integrates seamlessly with Google Calendar for easy scheduling and task management. This integration helps you keep track of your events and tasks in one place.",
-		"category": "integrations",
-		"open": true
+		"question": "¿Con qué frecuencia se recomienda asistir a terapia?",
+		"reply": "La frecuencia de las sesiones depende de cada persona y sus necesidades. En general, las sesiones suelen ser semanales, pero esto puede ajustarse según tu proceso.",
+		"category": "home",
+		"open": false
 	},
 	{
 		"question": "Does Foxi work with Slack?",

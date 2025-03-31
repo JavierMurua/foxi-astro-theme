@@ -8,6 +8,13 @@ import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
+
+
+// Data
+import faqData from '../data/json-files/faqData.json'
+// - FAQ Categories
+const faqHome = faqData.filter((faq) => faq.category === 'home')
 
 // Content
 // - Testimonial background
@@ -25,5 +32,10 @@ const SEO = {
 	<Features />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />
 	<HighlightBlocks />
+	<FAQ
+	title="Todo lo que necesitas saber antes de tu consulta"
+	text="¿Tienes dudas sobre cómo funciona la terapia o qué necesitas para una evaluación psicológica? Aquí encontrarás respuestas a las preguntas más comunes sobre las sesiones, la confidencialidad, la modalidad de atención y más. Si necesitas más información, no dudes en escribirme."
+	data={faqHome}
+	/>
 	<CTA />
 </Layout>
