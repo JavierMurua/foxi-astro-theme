@@ -41,6 +41,7 @@ export const navigationBarData: NavData = {
 		{ name: 'Inicio', link: '/foxi-astro-theme/#intro' },
 		{ name: 'Servicios', link: '/foxi-astro-theme/#features' },
 		{ name: 'Sobre mí', link: '/foxi-astro-theme/#highlight-0' },
+		{ name: 'Preguntas frecuentes', link: '/foxi-astro-theme/#FAQ' },
 		// {
 		// 	name: 'Resources',
 		// 	link: '#',
@@ -53,5 +54,5 @@ export const navigationBarData: NavData = {
 		// },
 		{ name: 'Contacto', link: '/foxi-astro-theme/#contacto' }
 	],
-	navActions: [{ name: 'Try it now', link: '/foxi-astro-theme/#', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Agendar', link: '/foxi-astro-theme/#', style: 'primary', size: 'lg' }]
 }

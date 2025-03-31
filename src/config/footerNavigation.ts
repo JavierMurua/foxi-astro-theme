@@ -60,10 +60,10 @@ export const footerNavigationData: FooterData = {
 					subCategory: 'Sobre mí',
 					subCategoryLink: '/foxi-astro-theme/#highlight-0'
 				},
-				// {
-				// 	subCategory: 'Changelog',
-				// 	subCategoryLink: '/changelog'
-				// },
+				{
+					subCategory: 'Preguntas frecuentes',
+					subCategoryLink: '/foxi-astro-theme/#FAQ'
+				},
 				{
 					subCategory: 'Contacto',
 					subCategoryLink: '/foxi-astro-theme/#contacto'

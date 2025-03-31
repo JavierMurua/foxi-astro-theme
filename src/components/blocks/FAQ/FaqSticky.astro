@@ -20,7 +20,7 @@ type Props = {
 const { title, text, data, type = 'left', classes } = Astro.props
 ---
 
-<StickySidebar classes={classes} type={type}>
+<StickySidebar id="FAQ" classes={classes} type={type}>
 	<header slot="sidebar">
 		{title && <h3 class="text-3xl">{title}</h3>}
 		{text && <p class="text-lg leading-relaxed">{text}</p>}
