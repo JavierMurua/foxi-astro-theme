@@ -9,6 +9,7 @@ import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
+import WhatsAppButton from '../components/blocks/whatsappbotton/WhatsAppButton.astro';
 
 
 // Data
@@ -28,6 +29,13 @@ const SEO = {
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
+	<WhatsAppButton 
+	phone="34123456789" 
+	message="Hola, quiero saber más sobre sus servicios." 
+	size={60} 
+	position="bottom-left"
+  />
+  
 	<Hero />
 	<Features />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />

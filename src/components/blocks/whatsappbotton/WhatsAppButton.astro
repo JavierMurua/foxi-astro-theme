@@ -1,0 +1,60 @@
+---
+export interface Props {
+  phone: string; // Número de WhatsApp
+  message?: string; // Mensaje predefinido
+  size?: number; // Tamaño del botón
+  position?: "bottom-left" | "bottom-right" | "top-left" | "top-right"; // Posición del botón
+  bottom?: string; // Distancia desde el fondo
+  right?: string; // Distancia desde la derecha
+  left?: string; // Alternativa si está a la izquierda
+  top?: string; // Alternativa si está arriba
+}
+
+const {
+  phone = "1234567890",
+  message = "¡Hola! Estoy interesado en más información.",
+  size = 50,
+  position = "bottom-right",
+  bottom = "20px",
+  right = "20px",
+  left = "auto",
+  top = "auto"
+} = Astro.props;
+
+const encodedMessage = encodeURIComponent(message);
+const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+---
+<a 
+  href={whatsappUrl} 
+  target="_blank" 
+  class="whatsapp-button" 
+  aria-label="Chatear por WhatsApp"
+  style={`bottom: ${position.includes('bottom') ? bottom : 'auto'}; 
+          top: ${position.includes('top') ? top : 'auto'}; 
+          right: ${position.includes('right') ? right : 'auto'}; 
+          left: ${position.includes('left') ? left : 'auto'}; 
+          width: ${size}px; height: ${size}px; font-size: ${size * 0.6}px;`}
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<style>
+  .whatsapp-button {
+    position: fixed;
+    margin:30px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background 0.3s ease;
+    z-index: 1000;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #128C7E;
+  }
+</style>
