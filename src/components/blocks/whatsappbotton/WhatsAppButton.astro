@@ -1,39 +1,49 @@
 ---
 export interface Props {
-  phone: string; // Número de WhatsApp
-  message?: string; // Mensaje predefinido
-  size?: number; // Tamaño del botón
-  position?: "bottom-left" | "bottom-right" | "top-left" | "top-right"; // Posición del botón
-  bottom?: string; // Distancia desde el fondo
-  right?: string; // Distancia desde la derecha
-  left?: string; // Alternativa si está a la izquierda
-  top?: string; // Alternativa si está arriba
+  phone: string;
+  message?: string;
+  size?: number;
+  bottom?: string;
+  right?: string;
+  left?: string;
+  top?: string;
 }
 
+// Valores por defecto
 const {
   phone = "1234567890",
   message = "¡Hola! Estoy interesado en más información.",
   size = 50,
-  position = "bottom-right",
   bottom = "20px",
   right = "20px",
-  left = "auto",
+  left = "20px",
   top = "auto"
 } = Astro.props;
 
 const encodedMessage = encodeURIComponent(message);
-const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+// URL de WhatsApp para móvil y escritorio
+const whatsappMobileUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
 ---
+<!-- Botón para móvil (Se muestra solo en pantallas menores a 768px) -->
 <a 
-  href={whatsappUrl} 
+  href={whatsappMobileUrl} 
   target="_blank" 
-  class="whatsapp-button" 
+  class="whatsapp-button whatsapp-mobile"
   aria-label="Chatear por WhatsApp"
-  style={`bottom: ${position.includes('bottom') ? bottom : 'auto'}; 
-          top: ${position.includes('top') ? top : 'auto'}; 
-          right: ${position.includes('right') ? right : 'auto'}; 
-          left: ${position.includes('left') ? left : 'auto'}; 
-          width: ${size}px; height: ${size}px; font-size: ${size * 0.6}px;`}
+  style={`bottom: ${bottom}; right: ${right}; width: ${size}px; height: ${size}px; font-size: ${size * 0.6}px;`}
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Botón para escritorio (Se muestra solo en pantallas mayores a 768px) -->
+<a 
+  href={whatsappDesktopUrl} 
+  target="_blank" 
+  class="whatsapp-button whatsapp-desktop"
+  aria-label="Chatear por WhatsApp"
+  style={`bottom: ${bottom}; left: ${left}; width: ${size}px; height: ${size}px; font-size: ${size * 0.6}px;`}
 >
   <i class="fa-brands fa-whatsapp"></i>
 </a>
@@ -41,8 +51,8 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
 <style>
   .whatsapp-button {
     position: fixed;
-    margin:30px;
     background-color: #25D366;
+    z-index: 1000;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -51,10 +61,28 @@ const whatsappUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     transition: background 0.3s ease;
-    z-index: 1000;
   }
 
   .whatsapp-button:hover {
     background-color: #128C7E;
+  }
+
+  /* Por defecto, ocultamos ambos botones */
+  .whatsapp-mobile, .whatsapp-desktop {
+    display: none;
+  }
+
+  /* Mostrar el botón móvil en pantallas menores a 768px */
+  @media (max-width: 768px) {
+    .whatsapp-mobile {
+      display: flex;
+    }
+  }
+
+  /* Mostrar el botón de escritorio en pantallas mayores a 768px */
+  @media (min-width: 769px) {
+    .whatsapp-desktop {
+      display: flex;
+    }
   }
 </style>
