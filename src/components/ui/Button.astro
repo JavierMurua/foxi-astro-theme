@@ -40,6 +40,8 @@ const {
 	type === 'link' || link ? (
 		<a
 			href={link}
+			target="_blank"
+			rel="noopener noreferrer"
 			class:list={[
 				'button',
 				{ ['button--' + `${size}`]: size },
@@ -101,4 +103,25 @@ const {
 	.button--neutral {
 		@apply bg-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-900 disabled:border-neutral-300 disabled:bg-neutral-300 [&.button--elevated]:shadow-neutral-500/30 [&.button--elevated]:hover:shadow-neutral-500/30 [&.button--elevated]:focus:shadow-neutral-500/30 [&.button--link]:bg-transparent [&.button--link]:text-neutral-700 hover:[&.button--link]:text-neutral-800 focus:[&.button--link]:text-neutral-900 [&.button--outline]:border-neutral-700 [&.button--outline]:bg-transparent [&.button--outline]:text-neutral-700 [&.button--outline]:hover:border-neutral-800 [&.button--outline]:hover:text-neutral-800;
 	}
+
+	/* Oculta el botón de WhatsApp móvil en escritorio */
+.button--desktop {
+	display: none;
+}
+
+/* Oculta el botón de WhatsApp escritorio en móviles y tablets */
+.button--mobile {
+	display: flex;
+}
+
+/* En pantallas grandes, mostramos el botón de escritorio y ocultamos el de móvil */
+@media (min-width: 1024px) {
+	.button--desktop {
+		display: flex;
+	}
+	.button--mobile {
+		display: none;
+	}
+}
+
 </style>

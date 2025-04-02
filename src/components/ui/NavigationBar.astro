@@ -31,7 +31,10 @@ function isActivePath(currentPath: string): boolean {
 const savedNavActions = navActions.map((action) => ({
 	...action,
 	size: action.size as 'base' | 'lg' | 'sm',
-	style: action.style as 'primary' | 'secondary' | 'neutral'
+	style: action.style as 'primary' | 'secondary' | 'neutral',
+	link: action.link || "",
+	device: action.device || ""
+
 }))
 ---
 
@@ -104,15 +107,21 @@ const savedNavActions = navActions.map((action) => ({
 			<Switcher />
 
 			<!-- Navigation action buttons -->
-			<div class="header__actions">
-				{
-					savedNavActions.map((action) => (
-						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
-							{action.name}
-						</Button>
-					))
-				}
-			</div>
+		<!-- Navigation action buttons -->
+		<div class="header__actions">
+			{
+				savedNavActions.map((action) => (
+					<Button
+						classes={`flex-auto ${action.device === 'mobile' ? 'button--mobile' : 'button--desktop'}`}
+						size={action.size}
+						style={action.style}
+						link={action.link}
+					>
+						{action.name}
+					</Button>
+				))
+			}
+		</div>
 		</nav>
 	</div>
 </header>

@@ -17,7 +17,6 @@ const {
   bottom = "20px",
   right = "20px",
   left = "20px",
-  top = "auto"
 } = Astro.props;
 
 const encodedMessage = encodeURIComponent(message);
@@ -58,14 +57,35 @@ const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
     text-decoration: none;
     transition: background 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s forwards, glowEffect 7s infinite 3s;
   }
 
   .whatsapp-button:hover {
     background-color: #128C7E;
   }
+
+    /* Animación de aparición */
+    @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Efecto de brillo en la sombra */
+  @keyframes glowEffect {
+  0% { box-shadow: 0 0 20px 1px rgba(226, 24, 125, 0.1); }
+  50% { box-shadow: 0 0 20px 5px rgba(190, 24, 93, 1); }
+  100% { box-shadow: 0 0 20px 1px rgba(226, 24, 125, 0.1); }
+}
 
   /* Por defecto, ocultamos ambos botones */
   .whatsapp-mobile, .whatsapp-desktop {

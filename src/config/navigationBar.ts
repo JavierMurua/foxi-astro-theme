@@ -23,6 +23,7 @@ export interface NavAction {
 	link: string
 	style: string
 	size: string
+	device: string
 }
 
 export interface NavData {
@@ -54,5 +55,20 @@ export const navigationBarData: NavData = {
 		// },
 		{ name: 'Contacto', link: '/foxi-astro-theme/#contacto' }
 	],
-	navActions: [{ name: 'Agendar', link: '/foxi-astro-theme/#', style: 'primary', size: 'lg' }]
+	navActions: [
+		{ 
+		  name: 'Agendar', 
+		  link: 'https://wa.me/543525419343?text=Hola, quiero agendar una sesión contigo. ¿Qué disponibilidad tienes?', 
+		  style: 'primary', 
+		  size: 'lg', 
+		  device: 'mobile' 
+		},
+		{ 
+		  name: 'Agendar', 
+		  link: 'https://web.whatsapp.com/send?phone=543525419343&text=Hola 👋 Me gustaría agendar una consulta contigo. ¿Cómo podemos coordinar?', 
+		  style: 'primary', 
+		  size: 'lg', 
+		  device: 'desktop' 
+		}
+	  ]
 }
