@@ -6,8 +6,8 @@
 		"open": true
 	},
 	{
-		"question": "¿Recibes IOSFA?",
-		"reply": "Sí, atiendo por IOSFA. Si deseas solicitar cobertura, consulta con la obra social los requisitos específicos. También puedes optar por consultas particulares.",
+		"question": "¿Recibes obras sociales?",
+		"reply": "Actualmente, atiendo por IOSFA. Si cuentas con otra obra social, puedo entregarte una factura para que gestiones el reintegro según las condiciones de tu prestadora.",
 		"category": "home",
 		"open": false
 	},
