@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  phone: string;
+  phone?: string;
   message?: string;
   size?: number;
   bottom?: string;
@@ -11,9 +11,9 @@ export interface Props {
 
 // Valores por defecto
 const {
-  phone = "1234567890",
-  message = "¡Hola! Estoy interesado en más información.",
-  size = 50,
+  phone = "543525419343",
+  message = "Hola, quiero saber más sobre tus servicios.",
+  size = 60,
   bottom = "20px",
   right = "20px",
   left = "20px",
@@ -21,11 +21,9 @@ const {
 
 const encodedMessage = encodeURIComponent(message);
 
-// URL de WhatsApp para móvil y escritorio
 const whatsappMobileUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
 const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
 ---
-<!-- Botón para móvil (Se muestra solo en pantallas menores a 768px) -->
 <a 
   href={whatsappMobileUrl} 
   target="_blank" 
@@ -36,7 +34,6 @@ const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<!-- Botón para escritorio (Se muestra solo en pantallas mayores a 768px) -->
 <a 
   href={whatsappDesktopUrl} 
   target="_blank" 
@@ -68,7 +65,6 @@ const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${
     background-color: #128C7E;
   }
 
-    /* Animación de aparición */
     @keyframes fadeIn {
     from {
       opacity: 0;
@@ -80,26 +76,22 @@ const whatsappDesktopUrl = `https://web.whatsapp.com/send?phone=${phone}&text=${
     }
   }
 
-  /* Efecto de brillo en la sombra */
   @keyframes glowEffect {
   0% { box-shadow: 0 0 20px 1px rgba(226, 24, 125, 0.1); }
   50% { box-shadow: 0 0 20px 5px rgba(190, 24, 93, 1); }
   100% { box-shadow: 0 0 20px 1px rgba(226, 24, 125, 0.1); }
 }
 
-  /* Por defecto, ocultamos ambos botones */
   .whatsapp-mobile, .whatsapp-desktop {
     display: none;
   }
 
-  /* Mostrar el botón móvil en pantallas menores a 768px */
   @media (max-width: 768px) {
     .whatsapp-mobile {
       display: flex;
     }
   }
 
-  /* Mostrar el botón de escritorio en pantallas mayores a 768px */
   @media (min-width: 769px) {
     .whatsapp-desktop {
       display: flex;
