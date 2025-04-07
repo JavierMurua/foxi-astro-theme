@@ -16,7 +16,7 @@ export const socialLinks: SocialLink[] = [
 	},
 	{
 		name: 'LinkedIn-Icons8',
-		link: 'https://www.linkedin.com/in/priscila-gimenez-3aa024215/',
+		link: 'https://www.linkedin.com/in/lic-priscila-gimenez/',
 		icon: 'icons8-linkedin'
 	},
 	// {

@@ -12,15 +12,21 @@
 		"open": false
 	},
 	{
-		"question": "¿Qué aspectos se evalúan en un apto psicológico?",
-		"reply": "En un apto psicológico, se evalúan diferentes funciones cognitivas y emocionales, como la coordinación visomotora, la atención y concentración, el tiempo de reacción, la capacidad intelectual, el control de impulsos y las características de personalidad. Dependiendo del tipo de apto que se necesite, como la licencia de conducir o el ingreso laboral, los criterios pueden variar.",
+		"question": "¿Qué es un apto psicológico?",
+		"reply": "Es el resultado de un proceso psicodiagnóstico donde figura si, al momento de la realización, el evaluado presenta las condiciones psíquicas necesarias —o no— para realizar una actividad específica.",
 		"category": "home",
 		"open": false
 	},
 	{
-		"question": "Is there a free trial available?",
-		"reply": "Yes, we offer a 14-day free trial for all new users. During the trial, you can explore all the features of Foxi without any commitment, allowing you to see how it fits into your workflow.",
-		"category": "pricing",
+		"question": "¿Qué es un psicotécnico?",
+		"reply": "Es un proceso de evaluación psicológica que utiliza pruebas estandarizadas para medir habilidades cognitivas, características de personalidad y competencias laborales. Su objetivo es analizar el grado de ajuste entre el perfil del postulante y los requerimientos del puesto, brindando herramientas objetivas al empleador para tomar decisiones o aplicar estrategias de acción en torno al postulante.",
+		"category": "home",
+		"open": false
+	},
+	{
+		"question": "¿Qué aspectos se evalúan en un apto psicológico?",
+		"reply": "En un apto psicológico, se evalúan diferentes funciones cognitivas y emocionales, como la coordinación visomotora, la atención y concentración, el tiempo de reacción, la capacidad intelectual, el control de impulsos y las características de personalidad. Dependiendo del tipo de apto que se necesite, como la licencia de conducir o el ingreso laboral, los criterios pueden variar.",
+		"category": "home",
 		"open": false
 	},
 	{
@@ -39,12 +45,6 @@
 		"question": "¿Con qué frecuencia se recomienda asistir a terapia?",
 		"reply": "La frecuencia de las sesiones depende de cada persona y sus necesidades. En general, las sesiones suelen ser semanales, pero esto puede ajustarse según tu proceso.",
 		"category": "home",
-		"open": false
-	},
-	{
-		"question": "Does Foxi work with Slack?",
-		"reply": "Yes, you can integrate Foxi with Slack to receive notifications and updates directly in your channels. This allows you to stay informed about your projects without leaving Slack.",
-		"category": "integrations",
 		"open": false
 	},
 	{
