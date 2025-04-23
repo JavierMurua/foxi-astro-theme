@@ -39,7 +39,7 @@ export const footerNavigationData: FooterData = {
 		aboutText:
 			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
 		logo: {
-			src: '/foxi-astro-theme/logo.svg',
+			src: '/foxi-astro-theme/logo.webp',
 			alt: 'The tailwind astro theme',
 			text: 'Priscila Giménez'
 		}

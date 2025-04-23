@@ -34,7 +34,7 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/foxi-astro-theme/logo.svg',
+		src: '/foxi-astro-theme/logo.webp',
 		alt: 'The tailwind astro theme',
 		text: 'Priscila Giménez.'
 	},
