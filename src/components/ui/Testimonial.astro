@@ -1,25 +1,9 @@
 ---
-// Testimonial
-// ------------
-// Description: the testimonial component is a ui element that displays a quote from a customer or client.
-// Properties:
-// - Blockquote: the quote
-// - Figcaption: the caption
-// - Cite: the cite of the testimonial
-// - Avatar: the user avatar
-// - Size: the size of the testimonial (base, sm)
-// - MobileSize: the mobile size of the testimonial (base, sm)
-// - Align: the content alignment of the testimonial (left, center)
-// - Rating: the rating of the testimonial (0 to 5) - optional
-// - QuoteSize: the size of the quote icon
-// - classes: additional classes
-// Reference: https://wind-ui.com/components/testimonials/
-
-// Components
 // - UI
 import { Icon } from 'astro-icon/components'
 import Rating from './Rating.astro'
 import Avatar from './Avatar.astro'
+import GmapReviews from '../reviews/GmapReviews.astro'
 
 // Props
 type Props = {
@@ -62,11 +46,15 @@ const {
 	<div class="testimonial__container">
 		<figure class="testimonial__figure">
 			<blockquote class="testimonial__blockquote">
+				<!-- <GmapReviews /> -->
 				<p>
-					{blockquote}
+					<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+				<script src="https://static.elfsight.com/platform/platform.js" async></script>
+				<div class="elfsight-app-40bb296f-4b1d-40fd-be7f-8a71a16af0ca" data-elfsight-app-lazy></div>
+					<!-- {blockquote} -->
 				</p>
 			</blockquote>
-			<figcaption class="testimonial__figcaption">
+			<!-- <figcaption class="testimonial__figcaption">
 				{rating && <Rating rating={rating} />}
 				<div class="testimonial__figcaption-container">
 					{
@@ -90,7 +78,7 @@ const {
 						}
 					</div>
 				</div>
-			</figcaption>
+			</figcaption> -->
 		</figure>
 		<Icon
 			name="quotes"

@@ -1,5 +1,5 @@
 - [ ] Arreglar el componente de GmapReviews.astro para no depender de terceros.
-- [ ] Sacar todo el Tailwind y cambiarlo por CSS puro.
 - [ ] Hacer que los servicios se acomoden para 3 y no 4.
 - [ ] Hacer que la página index deje de estar en una subpágina y esté en la raíz.
+- [ ] Mover este proyecto a la carpeta de clientes.
 - [ ] 

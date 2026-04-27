@@ -6,12 +6,6 @@
 		"open": true
 	},
 	{
-		"question": "¿Recibes obras sociales?",
-		"reply": "Actualmente, atiendo por IOSFA. Si cuentas con otra obra social, puedo entregarte una factura para que gestiones el reintegro según las condiciones de tu prestadora.",
-		"category": "home",
-		"open": false
-	},
-	{
 		"question": "¿Qué es un apto psicológico?",
 		"reply": "Es el resultado de un proceso psicodiagnóstico donde figura si, al momento de la realización, el evaluado presenta las condiciones psíquicas necesarias —o no— para realizar una actividad específica.",
 		"category": "home",

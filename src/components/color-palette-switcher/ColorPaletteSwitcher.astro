@@ -1,0 +1,41 @@
+---
+const palettes = [
+  {
+    name: "Rosa Primario",
+    colors: ["#fbcfe8", "#f472b6", "#E2187D", "#be185d", "#831843"],
+  },
+  {
+    name: "Neutral",
+    colors: ["#f1f5f9", "#cbd5e1", "#64748b", "#334155", "#0f172a"],
+  },
+  {
+    name: "Oscuro Chic",
+    colors: ["#1e293b", "#0f172a", "#020617", "#500724", "#db2777"],
+  },
+];
+---
+
+{process.env.NODE_ENV === 'development' && (
+  <div class="fixed bottom-6 right-6 z-50">
+    <details class="group relative">
+      <summary class="bg-primary-500 hover:bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg cursor-pointer">
+        🎨
+      </summary>
+      <div class="absolute bottom-14 right-0 bg-white dark:bg-neutral-800 rounded shadow-lg p-4 mt-2 w-60 border border-neutral-100 dark:border-neutral-700 transition-all animate-dropdown">
+        <h3 class="text-sm font-semibold mb-2 text-neutral-700 dark:text-neutral-100">Paletas de colores</h3>
+        <ul class="space-y-2">
+          {palettes.map((palette) => (
+            <li class="flex flex-col gap-1">
+              <span class="text-xs font-medium text-neutral-600 dark:text-neutral-300">{palette.name}</span>
+              <div class="flex gap-1">
+                {palette.colors.map((color) => (
+                  <span class="w-5 h-5 rounded" style={`background-color: ${color}`}></span>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+  </div>
+)}

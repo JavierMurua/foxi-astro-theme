@@ -1,0 +1,250 @@
+---
+/* ──────────────────────────────────────────────────────────────
+   GoogleReviewsCarousel.astro
+   Carrusel de reseñas sin JS – 100% HTML + CSS + Astro
+   ────────────────────────────────────────────────────────────── */
+
+// Tipado de reseña
+interface Review {
+  profilePhoto: string;
+  name: string;
+  stars: number;
+  text: string | null;
+}
+
+// Datos de reseñas (se puede importar desde un .ts separado si crece)
+const reviews: Review[] = [
+  {
+    profilePhoto: "https://lh3.googleusercontent.com/a-/ALV-UjUIIrhUFGa1FLBbso_SF73yr3kcr0CJ3sxQN-5itUZNO7AyROc=w36-h36-p-rp-mo-br100",
+    name: "Marcio Murua",
+    stars: 5,
+    text: "Desde el primer encuentro, la psicóloga Priscila me brindó un espacio de confianza y comprensión. Su enfoque empático y profesional me ayudó a abordar mis desafíos personales con nuevas perspectivas. Gracias a su acompañamiento, he logrado avances significativos en mi bienestar emocional. Recomiendo sinceramente sus servicios a quienes buscan apoyo psicológico de calidad.​"
+  },
+  {
+    profilePhoto: "https://lh3.googleusercontent.com/a-/ALV-UjXBDnLeaGuQ0cP1h070zwD58v0-jFf0GSz8XI_Q8gqe9Vnv4h1u-g=w36-h36-p-rp-mo-br100",
+    name: "Agustina Callero",
+    stars: 5,
+    text: "Excelente profesional! ♥"
+  },
+  {
+    profilePhoto: "https://lh3.googleusercontent.com/a/ACg8ocJ_RDxgwK0E7vsmfmobXcK17o3WOhNu_467pPi9bsVXXREPhg=w36-h36-p-rp-mo-br100",
+    name: "Pablo Martin Ungo",
+    stars: 5,
+    text: "Excelente profesional, muy recomendable."
+  },
+  {
+    profilePhoto: "https://lh3.googleusercontent.com/a-/ALV-UjUe5_t0WVk2Tk_9dQ88aR5LLQ4BgdeH2fAGOC4L1_oWMR6ZP84P=w36-h36-p-rp-mo-br100",
+    name: "Romina Avila",
+    stars: 5,
+    text: "Excelente 🫀✨…"
+  },
+  {
+    profilePhoto: "https://lh3.googleusercontent.com/a-/ALV-UjWnMZHAVFC2b0uqtPMqBl_8FDTJ2SVKR8iHt-pEpFYLPYlxBrqM=w36-h36-p-rp-mo-br100",
+    name: "Mara Randaxhe",
+    stars: 5,
+    text: null
+  }
+];
+---
+<section class="reviews">
+  <h2>Opiniones de nuestros clientes</h2>
+
+  <div class="carousel" tabindex="0">
+    <div class="track">
+      {reviews.map((review, index) => (
+        <div class="slide" id={`review-${index + 1}`} aria-label={`Reseña de ${review.name}`}>
+          <div class="review-card">
+            <img src={review.profilePhoto} alt={`Foto de ${review.name}`} class="avatar" />
+            <h3>{review.name}</h3>
+            <div class="stars" aria-label={`${review.stars} estrellas`}>
+              {Array.from({ length: review.stars }).map(() => "★")}
+            </div>
+            {review.text && <p>{review.text}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Indicadores -->
+  <div class="dots">
+    {reviews.map((_, i) => (
+      <a href={`#review-${i + 1}`} aria-label={`Ir a reseña ${i + 1}`}></a>
+    ))}
+  </div>
+</section>
+
+<style>
+/*───────────────────────────────
+  Estructura general
+───────────────────────────────*/
+.reviews {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #fbbf24;
+  border-radius: 15px;
+}
+
+.reviews h2 {
+  margin-bottom: 2rem;
+}
+
+/*───────────────────────────────
+  Carrusel base (solo CSS)
+───────────────────────────────*/
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.slide {
+  flex: 0 0 90%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .slide {
+    flex: 0 0 48%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    flex: 0 0 32%;
+  }
+}
+
+/*───────────────────────────────
+  Tarjeta de reseña
+───────────────────────────────*/
+.review-card {
+  background-color: #fafafa;
+  border: 1px solid #f5f5f5;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  color: #404040;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* horizontal */
+  justify-content: flex-start;
+  gap: 1rem;
+  min-height: 100%; /* altura mínima consistente */
+  /* max-height: 14rem;  */
+  /* overflow: hidden; */
+  min-width: 300px;
+  width: 100%;
+}
+
+.dark .review-card {
+  background-color: #404040;
+  border-color: #525252;
+  color: #fafafa;
+}
+
+/*───────────────────────────────
+  Columna izquierda: avatar + nombre + estrellas
+───────────────────────────────*/
+/* .review-card .meta {
+  flex: 0 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+} */
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.review-card h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stars {
+  color: #facc15;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/*───────────────────────────────
+  Columna derecha: texto
+───────────────────────────────*/
+/* .review-card .content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+} */
+
+.review-card p {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 0;
+  color: inherit;
+  text-align: left;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
+  /* display: -webkit-box; */
+  /* -webkit-line-clamp: 5; */
+  /* -webkit-box-orient: vertical; */
+}
+
+/*───────────────────────────────
+  Navegación con puntos
+───────────────────────────────*/
+.dots {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dots a {
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dots a:hover,
+.dots a:focus {
+  background-color: #3b82f6;
+}
+
+/*───────────────────────────────
+  Scrollbar (estética)
+───────────────────────────────*/
+.carousel::-webkit-scrollbar {
+  height: 0.5rem;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background-color: #a3a3a3;
+  border-radius: 1rem;
+}
+.carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+</style>
