@@ -1,34 +1,19 @@
 ---
 // - UI
 import { Icon } from 'astro-icon/components'
-import Rating from './Rating.astro'
-import Avatar from './Avatar.astro'
-import GmapReviews from '../reviews/GmapReviews.astro'
 
 // Props
 type Props = {
-	blockquote: string
-	figcaption: string
-	cite?: string
-	link?: string
-	avatar?: any
 	size?: string
 	mobileSize?: string
 	align?: 'left' | 'center'
-	rating?: 0 | 1 | 2 | 3 | 4 | 5
 	quoteSize?: number
 	classes?: string
 }
 const {
-	blockquote,
-	figcaption,
-	cite,
-	avatar,
 	size = 'base',
 	mobileSize = size,
-	rating,
 	align = 'left',
-	link,
 	classes,
 	quoteSize = 64
 } = Astro.props
@@ -46,39 +31,12 @@ const {
 	<div class="testimonial__container">
 		<figure class="testimonial__figure">
 			<blockquote class="testimonial__blockquote">
-				<!-- <GmapReviews /> -->
 				<p>
-					<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-				<script src="https://static.elfsight.com/platform/platform.js" async></script>
+					<!-- Componente legacy - Elfsight widget reemplazado por implementación nativa en BasicDark.astro -->
+				<script is:inline src="https://static.elfsight.com/platform/platform.js" async></script>
 				<div class="elfsight-app-40bb296f-4b1d-40fd-be7f-8a71a16af0ca" data-elfsight-app-lazy></div>
-					<!-- {blockquote} -->
 				</p>
 			</blockquote>
-			<!-- <figcaption class="testimonial__figcaption">
-				{rating && <Rating rating={rating} />}
-				<div class="testimonial__figcaption-container">
-					{
-						avatar && (
-							<Avatar
-								size="lg"
-								image={avatar}
-								radius="rounded-full"
-								classes="cursor-default max-w-full shrink-0"
-							/>
-						)
-					}
-					<div class="testimonial__figcaption-cite-container">
-						<span class="testimonial__figcaption--credit">{figcaption}</span>
-						{
-							cite && (
-								<cite class="testimonial__figcaption--cite">
-									{link ? <a href={link}>{cite}</a> : <span>{cite}</span>}
-								</cite>
-							)
-						}
-					</div>
-				</div>
-			</figcaption> -->
 		</figure>
 		<Icon
 			name="quotes"
