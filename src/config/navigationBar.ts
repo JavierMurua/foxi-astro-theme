@@ -34,15 +34,15 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/foxi-astro-theme/logo.webp',
+		src: '/logo.webp',
 		alt: 'The tailwind astro theme',
 		text: 'Priscila Giménez.'
 	},
 	navItems: [
-		{ name: 'Inicio', link: '/foxi-astro-theme/#intro' },
-		{ name: 'Servicios', link: '/foxi-astro-theme/#features' },
-		{ name: 'Sobre mí', link: '/foxi-astro-theme/#highlight-0' },
-		{ name: 'Preguntas frecuentes', link: '/foxi-astro-theme/#FAQ' },
+		{ name: 'Inicio', link: '/#intro' },
+		{ name: 'Servicios', link: '/#features' },
+		{ name: 'Sobre mí', link: '/#highlight-0' },
+		{ name: 'Preguntas frecuentes', link: '/#FAQ' },
 		// {
 		// 	name: 'Resources',
 		// 	link: '#',
@@ -53,7 +53,7 @@ export const navigationBarData: NavData = {
 		// 		{ name: 'Terms', link: '/terms' }
 		// 	]
 		// },
-		{ name: 'Contacto', link: '/foxi-astro-theme/#contacto' }
+		{ name: 'Contacto', link: '/#contacto' }
 	],
 	navActions: [
 		{ 

@@ -1,52 +1,249 @@
 ---
 // Basic Dark Testimonial section
 // ------------
-// Description: A centered testimonial section that contains: a quote, a caption and a cite in a dark section with a background image.
+// Description: A centered testimonial section that contains a grid of real Google reviews.
 
 // Components
-// - Layout
 import Section from '../../ui/Section.astro'
-import Row from '../../ui/Row.astro'
-import Col from '../../ui/Col.astro'
-// - UI
-import Testimonial from '../../ui/Testimonial.astro'
+import Button from '../../ui/Button.astro'
 
 // Props
 type Props = {
-	blockquote?: string
-	figcaption?: string
-	cite?: string
 	bg?: any
 	bgPosition?: 'left' | 'right' | 'center'
 }
 const {
-	blockquote = 'Tenía miedo de empezar terapia, pero desde la primera sesión con Priscila me sentí en confianza. Su trato es muy cálido y profesional, y pude hablar de cosas que antes me costaban muchísimo. Recomiendo su espacio a cualquier persona que quiera conocerse y mejorar su bienestar.',
-	figcaption = 'Agostina S.',
-	cite = 'Estudiante Ing. en Sistemas',
 	bg,
 	bgPosition = 'center'
 } = Astro.props
+
+interface Review {
+  author: string;
+  rating: 1 | 2 | 3 | 4 | 5;
+  text?: string;
+  avatar?: string;
+}
+
+const googleReviewUrl = "https://g.page/r/CbZYgXmKvnDvEBM/review";
+
+// Reordenado: Marcio en el medio para equilibrio visual
+const reviews: Review[] = [
+  {
+    author: "Paola Aylen Dussin",
+    rating: 5,
+    text: "Excelente profesional, muy buena atención.",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjW7tVPgfBzyTFS_ni4aKHWGHAarhAPypcCJ_qnPpYejIHVkIIJSzw=w36-h36-p-rp-mo-br100",
+  },
+  {
+    author: "Marcio Murua",
+    rating: 5,
+    text: "Desde el primer encuentro, la psicóloga Priscila me brindó un espacio de confianza y comprensión. Su enfoque empático y profesional me ayudó a abordar mis desafíos personales con nuevas perspectivas. Gracias a su acompañamiento, he logrado…",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjUIIrhUFGa1FLBbso_SF73yr3kcr0CJ3sxQN-5itUZNO7AyROc=w36-h36-p-rp-mo-br100",
+  },
+  {
+    author: "Agustina Callero",
+    rating: 5,
+    text: "Excelente profesional! ♥",
+    avatar: "https://lh3.googleusercontent.com/a-/ALV-UjXBDnLeaGuQ0cP1h070zwD58v0-jFf0GSz8XI_Q8gqe9Vnv4h1u-g=w36-h36-p-rp-mo-br100",
+  },
+];
 ---
 
 <Section
-	id="testimonial"
-	mode="dark"
+	id="testimonials"
 	bg={bg}
 	bgPosition={bgPosition}
-	classes="dark:border-t border-y border-neutral-800"
+	classes="testimonials-section py-16 md:py-24"
 >
-	<Row>
-		<Col span="12">
-			<Testimonial
-				blockquote={blockquote}
-				figcaption={figcaption}
-				cite={cite}
-				align="center"
-				size="4xl"
-				mobileSize="2xl"
-				classes="!leading-tight font-bold xl:text-5xl max-w-4xl mx-auto"
-				quoteSize={112}
-			/>
-		</Col>
-	</Row>
+	<div class="testimonials__container">
+		<header class="testimonials__header">
+			<h2 class="testimonials__title">
+				Lo que dicen quienes ya dieron el primer paso
+			</h2>
+			<p class="testimonials__subtitle">
+				Personas que confiaron en el proceso terapéutico y encontraron un espacio de escucha, claridad y crecimiento.
+			</p>
+			<div class="testimonials__summary" aria-label="Calificación de 5 estrellas en Google">
+				<div class="trust-badge">
+					<div class="stars-container">
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+						<span class="star">★</span>
+					</div>
+					<span class="trust-badge__text">Excelencia en Google</span>
+				</div>
+			</div>
+		</header>
+
+		<div class="reviews__grid">
+			{
+				reviews.map((review, index) => (
+					<article class="review" style={`animation-delay: ${index * 0.15}s`}>
+						<div class="review__header">
+							{review.avatar ? (
+								<img
+									src={review.avatar}
+									alt={`Foto de perfil de ${review.author}`}
+									loading="lazy"
+									width="48"
+									height="48"
+									class="review__avatar"
+								/>
+							) : (
+								<div class="review__avatar-fallback">{review.author.charAt(0)}</div>
+							)}
+							<div class="review__info">
+								<strong class="review__author">{review.author}</strong>
+								<div class="review__stars" aria-label={`${review.rating} de 5 estrellas`}>
+									{"★".repeat(review.rating)}
+									{"☆".repeat(5 - review.rating)}
+								</div>
+							</div>
+						</div>
+						{review.text && <p class="review__text">“{review.text}”</p>}
+					</article>
+				))
+			}
+		</div>
+
+		<footer class="testimonials__footer">
+			<Button
+				link={googleReviewUrl}
+				style="primary"
+				size="lg"
+				classes="testimonials__cta"
+				data-track="review-leave"
+			>
+				Compartir mi experiencia
+			</Button>
+		</footer>
+	</div>
 </Section>
+
+<style>
+	.testimonials__container {
+		@apply relative z-10 mx-auto max-w-6xl;
+	}
+
+	.testimonials__header {
+		@apply mb-16 text-center;
+	}
+
+	.testimonials__title {
+		@apply mb-4 text-3xl font-bold lg:text-5xl text-neutral-800;
+	}
+
+	.testimonials__subtitle {
+		@apply mx-auto mb-8 max-w-2xl text-lg text-neutral-600;
+	}
+
+	.testimonials__summary {
+		@apply flex items-center justify-center;
+	}
+
+	.trust-badge {
+		@apply inline-flex items-center gap-3 rounded-full border border-neutral-200/50 bg-white/80 px-4 py-1.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-neutral-300 hover:bg-white hover:shadow-md;
+		animation: badgeAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	@keyframes badgeAppear {
+		from { opacity: 0; transform: scale(0.9); }
+		to { opacity: 1; transform: scale(1); }
+	}
+
+	.trust-badge__text {
+		@apply text-[10px] font-bold uppercase tracking-[0.15em] text-neutral-600;
+	}
+
+	.stars-container {
+		@apply flex gap-0.5;
+	}
+
+	.star {
+		@apply text-yellow-500 text-lg;
+		animation: starFade 0.8s ease-out both;
+	}
+
+	.star:nth-child(2) { animation-delay: 0.1s; }
+	.star:nth-child(3) { animation-delay: 0.2s; }
+	.star:nth-child(4) { animation-delay: 0.3s; }
+	.star:nth-child(5) { animation-delay: 0.4s; }
+
+	@keyframes starFade {
+		from { opacity: 0; transform: scale(0.5); }
+		to { opacity: 1; transform: scale(1); }
+	}
+
+	.reviews__grid {
+		@apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+	}
+
+	.review {
+		@apply flex flex-col overflow-hidden rounded-2xl border border-neutral-100 bg-white/95 p-8 shadow-xl shadow-pink-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-pink-900/10;
+		animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	@keyframes fadeUp {
+		from { opacity: 0; transform: translateY(30px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.review__header {
+		@apply mb-5 flex items-center gap-4;
+	}
+
+	.review__avatar {
+		@apply h-14 w-14 rounded-full border border-neutral-100 object-cover shadow-sm;
+	}
+
+	.review__avatar-fallback {
+		@apply flex h-14 w-14 items-center justify-center rounded-full bg-neutral-100 font-bold text-neutral-500 border border-neutral-200;
+	}
+
+	.review__info {
+		@apply flex flex-col gap-0.5;
+	}
+
+	.review__author {
+		@apply text-lg font-bold text-neutral-800;
+	}
+
+	.review__stars {
+		@apply text-xs text-yellow-500 tracking-[0.2em];
+	}
+
+	.review__text {
+		@apply italic leading-relaxed text-neutral-600 text-base;
+		display: -webkit-box;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.testimonials__footer {
+		@apply mt-16 flex justify-center;
+	}
+
+	.testimonials__cta {
+		@apply transition-transform hover:scale-105;
+	}
+</style>
+
+<script is:inline>
+	document.addEventListener("click", function (event) {
+		const el = event.target.closest("[data-track]");
+		if (!el) return;
+
+		if (typeof window.gtag !== "function") return;
+
+		const action = el.getAttribute("data-track");
+		if (action === "review-leave") {
+			window.gtag("event", "review_leave_click", {
+				location: "testimonials_section",
+				outbound: true,
+			});
+		}
+	});
+</script>

@@ -8,14 +8,14 @@
 import TextImage from '../basic/TextImage.astro'
 
 // Content
-import highlight01 from '../../../assets/highlights/highlight-01.svg'
-import highlight01mobile from '../../../assets/highlights/highlight-01-mobile.svg'
-import highlight02 from '../../../assets/highlights/highlight-02.svg'
-import highlight02mobile from '../../../assets/highlights/highlight-02-mobile.svg'
-import highlight03 from '../../../assets/highlights/highlight-03.svg'
-import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
-import highlight04 from '../../../assets/highlights/highlight-04.svg'
-import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
+import highlight01 from '../../../assets/highlights/highlight-01.webp'
+import highlight01mobile from '../../../assets/highlights/highlight-01.webp'
+import highlight02 from '../../../assets/highlights/highlight-02.webp'
+import highlight02mobile from '../../../assets/highlights/highlight-02.webp'
+import highlight03 from '../../../assets/highlights/highlight-03.webp'
+import highlight03mobile from '../../../assets/highlights/highlight-03.webp'
+import highlight04 from '../../../assets/highlights/highlight-04.webp'
+import highlight04mobile from '../../../assets/highlights/highlight-04.webp'
 
 type HighlightBlock = {
 	title: string
@@ -77,7 +77,7 @@ const highlightBlocks: HighlightBlock[] = [
 			imageHeight={highlight.imageHeight}
 			mobileImage={highlight.mobileImage}
 			imagePosition={highlight.imagePosition}
-			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
+			classes={key !== 0 ? 'border-t border-neutral-800/30' : ''}
 		/>
 	))
 }

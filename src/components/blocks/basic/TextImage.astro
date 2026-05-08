@@ -50,12 +50,14 @@ const {
 <Section id={id} classes={classes}>
 	<Row>
 		<Col span="6" classes="relative">
-			<picture
-				class=`text-image__picture ${offsetImage  ? 'text-image__picture--offset' : ''} ${imagePosition === 'right' ? 'text-image__picture--offset-right' : ''}`
-			>
-				{mobileImage && <source srcset={mobileImage.src} media="(max-width: 1024px)" />}
-				<img src={image.src} alt={title} width={imageWidth} height={imageHeight} />
-			</picture>
+			<div class="text-image__frame">
+				<picture
+					class=`text-image__picture ${offsetImage  ? 'text-image__picture--offset' : ''} ${imagePosition === 'right' ? 'text-image__picture--offset-right' : ''}`
+				>
+					{mobileImage && <source srcset={mobileImage.src} media="(max-width: 1024px)" />}
+					<img src={image.src} alt={title} width={imageWidth} height={imageHeight} class="text-image__img" />
+				</picture>
+			</div>
 		</Col>
 		<Col span="6" classes={`self-center ${imagePosition === 'right' ? 'lg:-order-1' : ''}`}>
 			<div class="text-image__content">
@@ -69,6 +71,12 @@ const {
 <style>
 	.text-image__picture {
 		@apply flex justify-center lg:[&.text-image\_\_picture--offset-right_img]:left-0 lg:[&.text-image\_\_picture--offset-right_img]:right-auto lg:[&.text-image\_\_picture--offset]:h-full lg:[&.text-image\_\_picture--offset_img]:absolute lg:[&.text-image\_\_picture--offset_img]:right-0 lg:[&.text-image\_\_picture--offset_img]:top-1/2 lg:[&.text-image\_\_picture--offset_img]:max-w-none lg:[&.text-image\_\_picture--offset_img]:-translate-y-1/2;
+	}
+	.text-image__frame {
+		@apply overflow-hidden rounded-2xl shadow-xl shadow-neutral-950/20 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-900/10;
+	}
+	.text-image__img {
+		@apply block aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105;
 	}
 	.text-image__content {
 		@apply max-w-xl;

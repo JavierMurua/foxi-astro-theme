@@ -39,7 +39,7 @@ export const footerNavigationData: FooterData = {
 		aboutText:
 			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
 		logo: {
-			src: '/foxi-astro-theme/logo.webp',
+			src: '/logo.webp',
 			alt: 'The tailwind astro theme',
 			text: 'Priscila Giménez'
 		}
@@ -50,23 +50,23 @@ export const footerNavigationData: FooterData = {
 			subCategories: [
 				{
 					subCategory: 'Inicio',
-					subCategoryLink: '/foxi-astro-theme/#intro'
+					subCategoryLink: '/#intro'
 				},
 				{
 					subCategory: 'Servicios',
-					subCategoryLink: '/foxi-astro-theme/#features'
+					subCategoryLink: '/#features'
 				},
 				{
 					subCategory: 'Sobre mí',
-					subCategoryLink: '/foxi-astro-theme/#highlight-0'
+					subCategoryLink: '/#highlight-0'
 				},
 				{
 					subCategory: 'Preguntas frecuentes',
-					subCategoryLink: '/foxi-astro-theme/#FAQ'
+					subCategoryLink: '/#FAQ'
 				},
 				{
 					subCategory: 'Contacto',
-					subCategoryLink: '/foxi-astro-theme/#contacto'
+					subCategoryLink: '/#contacto'
 				}
 			]
 		},
