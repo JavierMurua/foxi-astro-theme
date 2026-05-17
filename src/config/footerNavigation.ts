@@ -37,10 +37,10 @@ export const footerNavigationData: FooterData = {
 	footerAbout: {
 		title: 'Priscila Giménez',
 		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
+			'Psicóloga con enfoque clínico brindando atención personalizada para el bienestar emocional y mental de adolescentes y adultos.',
 		logo: {
 			src: '/logo.webp',
-			alt: 'The tailwind astro theme',
+			alt: 'Logotipo de Lic. Priscila Giménez',
 			text: 'Priscila Giménez'
 		}
 	},

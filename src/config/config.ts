@@ -21,13 +21,13 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
+	siteTitle: 'Lic. Priscila Giménez | Psicóloga Online',
 	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+		'Espacio de terapia online para adultos y adolescentes. Acompañamiento psicológico desde un enfoque profesional y empático.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/favicon.webp',
-		alt: 'Foxi. logo'
+		alt: 'Lic. Priscila Giménez'
 	},
 	canonical: true,
 	noindex: false,

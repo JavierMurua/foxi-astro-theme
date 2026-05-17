@@ -35,7 +35,7 @@ export interface NavData {
 export const navigationBarData: NavData = {
 	logo: {
 		src: '/logo.webp',
-		alt: 'The tailwind astro theme',
+		alt: 'Logotipo de Lic. Priscila Giménez',
 		text: 'Priscila Giménez.'
 	},
 	navItems: [
