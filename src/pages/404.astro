@@ -6,7 +6,6 @@ import Section from '../components/ui/Section.astro'
 import Row from '../components/ui/Row.astro'
 import Col from '../components/ui/Col.astro'
 // - UI
-import Spacer from '../components/ui/Spacer.astro'
 import Button from '../components/ui/Button.astro'
 import { Icon } from 'astro-icon/components'
 
@@ -129,7 +128,7 @@ const SEO = {
 		<Row flex classes="text-center items-center justify-center">
 			<Col span="2" />
 			<Col span="8">
-				<Spacer size="2" desktopSize="4" />
+				<div class="mt-8 lg:mt-16"></div>
 				<Button link="/"> Volver a la página de Inicio <Icon name="long-arrow-right" /> </Button>
 			</Col>
 			<Col span="2" />
