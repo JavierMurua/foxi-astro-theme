@@ -5,8 +5,6 @@ import { ClientRouter } from 'astro:transitions'
 import GoogleAnalytics from '../../scripts/googleAnalytics.astro'
 import GoogleTagManagerHead from '../../scripts/googleTagManagerHead.astro'
 import GoogleSearchConsole from '../../scripts/googleSearchConsole.astro'
-// Partials
-import Seo from './partials/Seo.astro'
 // Data
 import { configData } from '../../../config/config'
 
@@ -26,9 +24,40 @@ const {
 	title = configData.siteTitle,
 	description = configData.siteDescription,
 	ogImage = configData.ogImage,
-	canonical = configData.canonical,
 	noindex = configData.noindex
 } = Astro.props
+
+const imageUrl = new URL(ogImage, Astro.site).toString()
+
+// Schema.org Structured Data (MedicalBusiness / Person profile)
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "MedicalBusiness",
+	"name": "Lic. Priscila Giménez — Psicóloga",
+	"description": "Espacio de terapia online para adultos y adolescentes. Acompañamiento psicológico desde un enfoque profesional y empático.",
+	"medicalSpecialty": "ClinicalPsychology",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "Julio Argentino Roca 221",
+		"addressLocality": "Jesús María",
+		"addressRegion": "Córdoba",
+		"postalCode": "X5220",
+		"addressCountry": "AR"
+	},
+	"telephone": "+543525419343",
+	"url": Astro.site ? Astro.site.toString() : "https://psipriscilagimenez.com/",
+	"image": imageUrl,
+	"sameAs": [
+		"https://www.instagram.com/psi.priscilagimenez",
+		"https://www.linkedin.com/in/lic-priscila-gimenez/"
+	],
+	"openingHoursSpecification": {
+		"@type": "OpeningHoursSpecification",
+		"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+		"opens": "08:00",
+		"closes": "20:00"
+	}
+}
 ---
 
 <head>
@@ -37,18 +66,40 @@ const {
 	<GoogleSearchConsole />
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<Seo
-		title={title}
-		description={description}
-		ogImage={ogImage}
-		canonical={canonical}
-		noindex={noindex}
-	/>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="author" content="Lic. Priscila Giménez" />
+	<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+	<link rel="canonical" href={Astro.url} />
+	
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={Astro.url} />
+	<meta property="og:site_name" content="Lic. Priscila Giménez" />
+	<meta property="og:locale" content="es_AR" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={imageUrl} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:alt" content="Lic. Priscila Giménez — Terapia y Evaluaciones Psicológicas" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={Astro.url} />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={imageUrl} />
+
 	<link rel="icon" href={configData.logo.src} type="image/webp" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	
 	<link rel="sitemap" href="/sitemap-index.xml" />
 	<meta name="generator" content={Astro.generator} />
-	<meta name="theme-color" content="#134e4a" />
+	<meta name="theme-color" content="#fc3d78" />
 	<ClientRouter fallback="swap" />
+	
+	<!-- JSON-LD Structured Data -->
+	<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
