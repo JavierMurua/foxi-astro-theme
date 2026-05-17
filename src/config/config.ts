@@ -24,7 +24,7 @@ export const configData: Config = {
 	siteTitle: 'Lic. Priscila Giménez | Psicóloga Online',
 	siteDescription:
 		'Espacio de terapia online para adultos y adolescentes. Acompañamiento psicológico desde un enfoque profesional y empático.',
-	ogImage: '/og.jpg',
+	ogImage: '/og.png',
 	logo: {
 		src: '/favicon.webp',
 		alt: 'Lic. Priscila Giménez'
