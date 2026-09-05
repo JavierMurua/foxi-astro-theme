@@ -1,0 +1,41 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Consultorio privado — público general</title>
+  <rect width="1080" height="1080" rx="40" fill="#F0FDFA"/>
+  <rect x="60" y="60" width="960" height="960" rx="32" fill="white" stroke="#D1FAE5" stroke-width="2"/>
+  <!-- Two columns icons -->
+  <g transform="translate(360, 360)">
+    <circle cx="0" cy="0" r="90" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="3"/>
+    <!-- House / consultorio icon -->
+    <path d="M-42 28 L0 -28 L42 28 L32 28 L32 42 L-32 42 L-32 28 Z" fill="none" stroke="#374151" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="-14" y="12" width="28" height="30" rx="3" fill="none" stroke="#374151" stroke-width="5"/>
+    <circle cx="0" cy="24" r="3" fill="#374151"/>
+  </g>
+  <g transform="translate(720, 360)">
+    <circle cx="0" cy="0" r="90" fill="#FFF7ED" stroke="#FDBA74" stroke-width="3"/>
+    <!-- People icon -->
+    <circle cx="-22" cy="-12" r="18" fill="none" stroke="#374151" stroke-width="6"/>
+    <circle cx="22" cy="-12" r="18" fill="none" stroke="#374151" stroke-width="6"/>
+    <path d="M-42 36 C-42 18 -28 8 -12 8 L-12 8 C4 8 18 18 18 36" fill="none" stroke="#374151" stroke-width="6" stroke-linecap="round"/>
+    <path d="M8 36 C8 22 14 14 22 14 L28 14 C38 14 42 22 42 36" fill="none" stroke="#374151" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <!-- Divider -->
+  <line x1="540" y1="300" x2="540" y2="420" stroke="#E5E7EB" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="540" y="370" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#9CA3AF">·</text>
+  <!-- Text -->
+  <text x="540" y="540" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="3" fill="#6B7280">CONSULTORIO PRIVADO</text>
+  <text x="540" y="600" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#1F2937">Adultos y jóvenes</text>
+  <text x="540" y="656" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#0F766E">+18</text>
+  <text x="540" y="710" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#6B7280">sin vínculo con la Fuerza</text>
+  <line x1="440" y1="740" x2="640" y2="740" stroke="#99F6E4" stroke-width="6" stroke-linecap="round"/>
+  <!-- Location -->
+  <g transform="translate(540, 800)">
+    <rect x="-280" y="-28" width="560" height="56" rx="28" fill="#F0FDFA" stroke="#CCFBF1" stroke-width="2"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#0F766E">Roca 221 · Jesús María · Online</text>
+  </g>
+  <text x="540" y="870" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#9CA3AF">Gendarmes y aspirantes → atención</text>
+  <text x="540" y="900" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#374151">exclusivamente en ESCUSUB Sanidad</text>
+  <g transform="translate(540, 960)">
+    <rect x="-180" y="-22" width="360" height="44" rx="22" fill="#F3F4F6"/>
+    <text x="0" y="7" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" letter-spacing="1.5" fill="#6B7280">LIC. PRISCILA GIMÉNEZ · PSICÓLOGA</text>
+  </g>
+</svg>

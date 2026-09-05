@@ -42,6 +42,12 @@
 		"open": false
 	},
 	{
+		"question": "¿Atendés a aspirantes o personal de Gendarmería en consultorio privado?",
+		"reply": "Atiendo a aspirantes y personal de Gendarmería únicamente dentro del área de Sanidad de la ESCUSUB, en el marco institucional correspondiente. Por normativa, esas consultas no pueden realizarse en mi consultorio privado (presencial u online). En consultorio privado y online atiendo a adultos y jóvenes +18 sin vínculo con la Fuerza. Si sos aspirante o gendarme, te oriento para que solicites atención directamente en Sanidad de la Escuela.",
+		"category": "home",
+		"open": false
+	},
+	{
 		"question": "How do I connect Foxi with Trello?",
 		"reply": "To connect Foxi with Trello, go to the integrations page in your settings and follow the instructions to link your accounts. This integration helps you manage your Trello boards and Foxi projects together.",
 		"category": "integrations",
